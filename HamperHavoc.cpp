@@ -2,6 +2,14 @@
 #include <string>
 
 
+struct Towel
+{
+   std::string color{""};
+   std::string size{""};
+   std::string material{""};
+};
+
+
 int main()
 {
 
@@ -10,6 +18,9 @@ int main()
 
     //Declare Hamper Report Message
     std::string sHamperMsg{""};
+     
+    //Declare High Hamper Amount Message
+    std::string sHighHamperMsg{"Bra"};
 
     //Say it loud
     std::cout << "\nHamper Havoc!\n\n";
@@ -35,14 +46,26 @@ int main()
        //Alert on Major Washing
        for(int i{0}; i < nHampers; i++)
        {
-          std::cout << "Brah! ";
+          sHighHamperMsg += "a";
        }
+
+       //Display Major Washing Message
+       std::cout << sHighHamperMsg + "\n\n";
 
     }
 
     //Display Hamper Report
     std::cout << "\nWe washed " << nHampers << " hampers.\n\n";
-    std::cout << sHamperMsg;
+    std::cout << sHamperMsg << "\n\n";
+
+    //Use Towel Stuct and Set Properties
+    Towel bigTowel;
+    bigTowel.color = "Green";
+    bigTowel.size = "Large";
+    bigTowel.material = "Cotton";
+
+    //Display Towel Info
+    std::cout << "Big Towel is a " << bigTowel.size << " " << bigTowel.color << " " << bigTowel.material << " towel.\n\n";
 
     //Clean view at the end
     std::cout << "\n\n";
