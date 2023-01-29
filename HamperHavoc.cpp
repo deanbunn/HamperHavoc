@@ -1,6 +1,8 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
+#include <vector>
+
 
 //Towel Definition
 struct Towel
@@ -33,6 +35,9 @@ int main()
      
     //Declare High Hamper Amount Message
     std::string sHighHamperMsg{"Bra"};
+
+    //Declare Towel Vector
+    std::vector<Towel> vTowels;
 
     //Say it loud
     std::cout << "\nHamper Havoc!\n\n";
@@ -76,8 +81,14 @@ int main()
     bigTowel.size = "Large";
     bigTowel.material = "Cotton";
 
-    //Display Towel Info
-    std::cout << "Big Towel is a " << bigTowel.size << " " << bigTowel.color << " " << bigTowel.material << " towel.\n\n";
+    //Add Towel to Towel Vector
+    vTowels.push_back(bigTowel);
+    
+    //Display Towels
+    for(Towel twl: vTowels)
+    {
+       std::cout << "Towel is a " << twl.size << " " << twl.color << " " << twl.material << " towel.\n\n";
+    }
 
     //Play with Dice Based Upon Number of Hampers
     for(int y = 1; y <= nHampers; y++)
