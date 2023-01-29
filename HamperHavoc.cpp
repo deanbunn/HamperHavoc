@@ -79,7 +79,11 @@ int main()
     //Display Towel Info
     std::cout << "Big Towel is a " << bigTowel.size << " " << bigTowel.color << " " << bigTowel.material << " towel.\n\n";
 
-    std::cout << "You rolled a " << RoleDie(20) << "\n\n";
+    //Play with Dice Based Upon Number of Hampers
+    for(int y = 1; y <= nHampers; y++)
+    {
+       std::cout << "Hamper " << y << " had " << RoleDie(20) << " socks in it." << "\n\n";
+    }
 
     //Clean view at the end
     std::cout << "\n\n";
