@@ -81,9 +81,16 @@ int main()
     bigTowel.size = "Large";
     bigTowel.material = "Cotton";
 
-    //Add Towel to Towel Vector
+    //Second Towel 
+    Towel bchTowel; 
+    bchTowel.color = "Blue";
+    bchTowel.size = "X-Large";
+    bchTowel.material = "Polyester";
+
+    //Add Towels to Towel Vector
     vTowels.push_back(bigTowel);
-    
+    vTowels.push_back(bchTowel);
+
     //Display Towels
     for(Towel twl: vTowels)
     {
