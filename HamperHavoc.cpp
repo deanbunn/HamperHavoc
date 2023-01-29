@@ -1,7 +1,8 @@
 #include <iostream>
+#include <cstdlib>
 #include <string>
 
-
+//Towel Definition
 struct Towel
 {
    std::string color{""};
@@ -9,9 +10,20 @@ struct Towel
    std::string material{""};
 };
 
+//Role Die Function
+int RoleDie(int dSides)
+{
+   //Calculate Role Value
+   int roleValue = (rand() % dSides) + 1;
+
+   return roleValue;
+}
 
 int main()
 {
+
+    //Seed for Random (Required for Role Die Function)
+    srand((unsigned)time(0));
 
     //Declare Hamper Number
     int nHampers{0};
@@ -66,6 +78,8 @@ int main()
 
     //Display Towel Info
     std::cout << "Big Towel is a " << bigTowel.size << " " << bigTowel.color << " " << bigTowel.material << " towel.\n\n";
+
+    std::cout << "You rolled a " << RoleDie(20) << "\n\n";
 
     //Clean view at the end
     std::cout << "\n\n";
