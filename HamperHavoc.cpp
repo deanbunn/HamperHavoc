@@ -87,6 +87,9 @@ int main()
     bchTowel.size = "X-Large";
     bchTowel.material = "Polyester";
 
+    //Test for Copy Towel
+    Towel cpyTowel; 
+
     //Add Towels to Towel Vector
     vTowels.push_back(bigTowel);
     vTowels.push_back(bchTowel);
@@ -94,8 +97,19 @@ int main()
     //Display Towels
     for(Towel twl: vTowels)
     {
+       //Report Out Towel Information
        std::cout << "Towel is a " << twl.size << " " << twl.color << " " << twl.material << " towel.\n\n";
-    }
+      
+       //Check If Needs to be Copied
+       if(twl.color == "Blue")
+       {
+          cpyTowel = twl;
+       }
+
+    }//End of vTowels Foreach
+
+    //Report Out Copy Towel Color
+    std::cout << "Copy Towel is " << cpyTowel.color << "\n\n";
 
     //Play with Dice Based Upon Number of Hampers
     for(int y = 1; y <= nHampers; y++)
