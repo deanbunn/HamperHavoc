@@ -1,49 +1,40 @@
 #include <string>
 #include "contestant.h"
 
-class Contestant
-{
-    private:
-        int m_id {0};
-        int m_strength {0};
-        int m_dexterity {0};
-        int m_constitution {0};
-        int m_intelligence {0};
-        int m_wisdom {0};
-        int m_charisma {0};
-        std::string m_displayname{""};
+//Default Constructor
+Contestant::Contestant(){}
 
-    public:
-        //ID Methods
-        void setID(int s_id){m_id = s_id;}
-        int getID(){return m_id;}
+//Constructor with Display Name Provided
+Contestant::Contestant(std::string s_displayname){ m_displayname = s_displayname; }
 
-        //Strength Methods
-        void setStr(int s_str){m_strength = s_str;}
-        int getStr(){return m_strength;}
+//ID Methods
+void Contestant::setID(int s_id){m_id = s_id;}
+int Contestant::getID(){return m_id;}
 
-        //Dexterity Methods
-        void setDex(int s_dex){m_dexterity = s_dex;}
-        int getDex(){return m_dexterity;}
+//Strength Methods
+void Contestant::setStr(int s_str){m_strength = s_str;}
+int Contestant::getStr(){return m_strength;}
 
-        //Constitution Methods
-        void setCon(int s_con){m_constitution = s_con;}
-        int getCon(){return m_constitution;}
+//Dexterity Methods
+void Contestant::setDex(int s_dex){m_dexterity = s_dex;}
+int Contestant::getDex() { return m_dexterity; }
 
-        //Intelligence Methods
-        void setInt(int s_int){m_intelligence = s_int;}
-        int getInt(){return m_intelligence;}
+// Constitution Methods
+void Contestant::setCon(int s_con) { m_constitution = s_con; }
+int Contestant::getCon() { return m_constitution; }
 
-        //Wisdom Methods
-        void setWis(int s_wis){m_wisdom = s_wis;}
-        int getWis(){return m_wisdom;}
+// Intelligence Methods
+void Contestant::setInt(int s_int) { m_intelligence = s_int; }
+int Contestant::getInt() { return m_intelligence; }
 
-        //Charisma Methods
-        void setChr(int s_chr){m_charisma = s_chr;}
-        int getChr(){return m_charisma;}
-    
-        //DisplayName Methods
-        void setDisplayName(std::string s_displayname){m_displayname = s_displayname;}
-        std::string getDisplayName(){return m_displayname;}
+// Wisdom Methods
+void Contestant::setWis(int s_wis) { m_wisdom = s_wis; }
+int Contestant::getWis() { return m_wisdom; }
 
-};
+// Charisma Methods
+void Contestant::setChr(int s_chr) { m_charisma = s_chr; }
+int Contestant::getChr() { return m_charisma; }
+
+// DisplayName Methods
+void Contestant::setDisplayName(std::string s_displayname) { m_displayname = s_displayname; }
+std::string Contestant::getDisplayName() { return m_displayname; }

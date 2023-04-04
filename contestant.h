@@ -16,37 +16,43 @@ class Contestant
         std::string m_displayname;
 
     public:
+        //Default Constructor
+        Contestant();
+
+        //Constructor with DisplayName Provided
+        Contestant(std::string s_displayname);
+
         //ID Methods
         void setID(int s_id);
-        int getID(){return m_id;}
+        int getID();
 
         //Strength Methods
         void setStr(int s_str);
-        int getStr(){return m_strength;}
+        int getStr();
 
         //Dexterity Methods
         void setDex(int s_dex);
-        int getDex(){return m_dexterity;}
+        int getDex();
 
         //Constitution Methods
         void setCon(int s_con);
-        int getCon(){return m_constitution;}
+        int getCon();
 
         //Intelligence Methods
         void setInt(int s_int);
-        int getInt(){return m_intelligence;}
+        int getInt();
 
         //Wisdom Methods
         void setWis(int s_wis);
-        int getWis(){return m_wisdom;}
+        int getWis();
 
         //Charisma Methods
         void setChr(int s_chr);
-        int getChr(){return m_charisma;}
+        int getChr();
     
         //DisplayName Methods
         void setDisplayName(std::string s_displayname);
-        std::string getDisplayName(){return m_displayname;}
+        std::string getDisplayName();
 
 };
 
