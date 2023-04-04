@@ -19,22 +19,25 @@ int Contestant::getStr(){return m_strength;}
 void Contestant::setDex(int s_dex){m_dexterity = s_dex;}
 int Contestant::getDex() { return m_dexterity; }
 
-// Constitution Methods
+//Constitution Methods
 void Contestant::setCon(int s_con) { m_constitution = s_con; }
 int Contestant::getCon() { return m_constitution; }
 
-// Intelligence Methods
+//Intelligence Methods
 void Contestant::setInt(int s_int) { m_intelligence = s_int; }
 int Contestant::getInt() { return m_intelligence; }
 
-// Wisdom Methods
+//Wisdom Methods
 void Contestant::setWis(int s_wis) { m_wisdom = s_wis; }
 int Contestant::getWis() { return m_wisdom; }
 
-// Charisma Methods
+//Charisma Methods
 void Contestant::setChr(int s_chr) { m_charisma = s_chr; }
 int Contestant::getChr() { return m_charisma; }
 
-// DisplayName Methods
+//DisplayName Methods
 void Contestant::setDisplayName(std::string s_displayname) { m_displayname = s_displayname; }
 std::string Contestant::getDisplayName() { return m_displayname; }
+
+//Combined Stat Blocks
+int Contestant::getCombinedStatBlock(){ return m_strength + m_dexterity + m_constitution + m_intelligence + m_wisdom + m_charisma; }

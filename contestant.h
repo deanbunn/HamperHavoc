@@ -54,6 +54,9 @@ class Contestant
         void setDisplayName(std::string s_displayname);
         std::string getDisplayName();
 
+        //Combined Stat Block
+        int getCombinedStatBlock();
+
 };
 
 

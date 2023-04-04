@@ -21,13 +21,8 @@ int main()
     //Var for Constestant ID
     int nHHID {0};
 
-    //Declare Contestant Selections
-    int nCnstSelctOne{0};
-    int nCnstSelctTwo{0};
-   
-    //Declare Contestant Attack Values
-    int nAttackOne{0};
-    int nAttackTwo{0};
+    //Declare Keep Fighting 
+    bool bKeepFighting = true;
 
     //Sort Contestant Names
     sort(vContestantsNames.begin(),vContestantsNames.end());
@@ -59,30 +54,97 @@ int main()
     //Display Start Message
     std::cout << "\nHamper Havoc!\n\n";
 
-    //Display List of Fighters 
-    std::cout << "Contestants for this event:\n";
-
-    //Display Contestant Menu
-    for(Contestant hhcon: vContestants)
+    do
     {
-        std::cout << hhcon.getID() << " = " << hhcon.getDisplayName() << "\n";
-    }
+        //Declare Contestant Selections
+        int nCnstSelctOne{0};
+        int nCnstSelctTwo{0};
+   
+        //Declare Contestant Attack Values
+        int nAttackChamp{0};
+        int nAttackCntdr{0};
 
-    //Do While Loop Goes Here
+        //Initiate Contestants
+        Contestant cnstChamp;
+        Contestant cnstCntdr; 
 
-    std::cout << "\n";
-    std::cout << "Enter the number of your champion: ";
-    std::cin >> nCnstSelctOne;
+        //Var for Keep Fighting Question Answer
+        std::string sKeepFighting{""};
 
-    std::cout << "\n";
-    std::cout << "Enter the number of contender: ";
-    std::cin >> nCnstSelctTwo;
+        // Display List of Fighters
+        std::cout << "Contestants for this event:\n";
 
-    std::cout << "\n\n";
+        // Display Contestant Menu
+        for (Contestant hhcon : vContestants)
+        {
+            std::cout << hhcon.getID() << " = " << hhcon.getDisplayName() << "\n";
+        }
 
+        std::cout << "\n";
+        std::cout << "Enter the number of your champion: ";
+        std::cin >> nCnstSelctOne;
 
+        std::cout << "\n";
+        std::cout << "Enter the number of the contender: ";
+        std::cin >> nCnstSelctTwo;
 
+        //Check Submitted Numbers
+        if(nCnstSelctOne > 0 && nCnstSelctOne <= vContestants.size() && nCnstSelctTwo > 0 && nCnstSelctTwo <= vContestants.size())
+        {
+            //Configure Contestants
+            for(Contestant hhcnst : vContestants)
+            {
+
+                //Configure Champion
+                if(nCnstSelctOne == hhcnst.getID())
+                {
+                    cnstChamp = hhcnst;
+                }
+
+                // Configure Contender
+                if(nCnstSelctTwo == hhcnst.getID())
+                {
+                    cnstCntdr = hhcnst;
+                }
+
+            }// End of Configure Havoc Contestants for this Bout
+
+            //Report Bout Choices
+            std::cout << "\nYou chose to have " << cnstChamp.getDisplayName() << " fight " << cnstCntdr.getDisplayName() << "\n\n";
+
+            //Calculate Fight
+            nAttackChamp = cnstChamp.getCombinedStatBlock() + RoleDie(20);
+            nAttackCntdr = cnstCntdr.getCombinedStatBlock() + RoleDie(20);
+
+            //Report the Bout Results
+            if(nAttackChamp >= nAttackCntdr)
+            {
+                std::cout << cnstChamp.getDisplayName() << " defeated " << cnstCntdr.getDisplayName() << " by a score of " << nAttackChamp << " to " << nAttackCntdr  << "\n";
+            }
+            else
+            {
+                std::cout << cnstCntdr.getDisplayName() << " defeated " << cnstChamp.getDisplayName() << " by a score of " << nAttackCntdr << " to " << nAttackChamp << "\n";
+            }
+
+            //Ask for Another Bout
+            std::cout << "\nDo you want to have another bout? Enter \'Y\' for Yes\n\n";
+            std::cin >> sKeepFighting;
+
+            //Check for Another Bout Answer
+            if(sKeepFighting != "Y")
+            {
+                bKeepFighting = false;
+            }
+
+        }
+        else
+        {
+            bKeepFighting = false;
+        }
+
+    } while (bKeepFighting == true);
     
+
     //Clean view at the end
     std::cout << "\n\n";
         
